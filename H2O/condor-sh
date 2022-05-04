@@ -1,0 +1,11 @@
+#!/bin/bash
+universe= vanilla
+output= test.output
+error= errors.txt
+should_transfer_files=yes
+when_to_transfer_output=on_exit
+transfer_input_files=simulation.input,Placeholder
+###,UFF/pseudo_atoms.def,UFF/force_field_mixing_rules.def,Hansen/N2O.def
+log= test.logfile
+executable=/scratch365/jgonza26/Project_HC/H2O/mofs/Foldername/raspa.sh
+queue
