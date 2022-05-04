@@ -1,0 +1,56 @@
+000 (1781767.000.000) 09/09 16:11:19 Job submitted from host: <10.32.85.31:9618?addrs=10.32.85.31-9618&noUDP&sock=2062_f060_3>
+...
+007 (1781767.000.000) 09/09 16:11:26 Shadow exception!
+	Error from slot1_10@d8civy134.crc.nd.edu: SHADOW at 10.32.85.31 failed to send file(s) to <10.32.79.131:9607>: error reading from /scratch365/jgonza26/Project_HC/O2/VETVAS_manual.cif: (errno 2) No such file or directory; STARTER failed to receive file(s) from <10.32.85.31:9618>
+	0  -  Run Bytes Sent By Job
+	686  -  Run Bytes Received By Job
+...
+012 (1781767.000.000) 09/09 16:11:26 Job was held.
+	Error from slot1_10@d8civy134.crc.nd.edu: SHADOW at 10.32.85.31 failed to send file(s) to <10.32.79.131:9607>: error reading from /scratch365/jgonza26/Project_HC/O2/VETVAS_manual.cif: (errno 2) No such file or directory; STARTER failed to receive file(s) from <10.32.85.31:9618>
+	Code 13 Subcode 2
+...
+000 (1793810.000.000) 09/14 10:03:41 Job submitted from host: <10.32.85.31:9618?addrs=10.32.85.31-9618&noUDP&sock=2107_ce23_3>
+...
+007 (1793810.000.000) 09/14 10:03:47 Shadow exception!
+	Error from slot1_1@d6cneh040.crc.nd.edu: SHADOW at 10.32.85.31 failed to send file(s) to <10.32.74.48:9427>: error reading from /scratch365/jgonza26/Project_HC/O2/VETVAS_manual.cif: (errno 2) No such file or directory; STARTER failed to receive file(s) from <10.32.85.31:9618>
+	0  -  Run Bytes Sent By Job
+	686  -  Run Bytes Received By Job
+...
+012 (1793810.000.000) 09/14 10:03:47 Job was held.
+	Error from slot1_1@d6cneh040.crc.nd.edu: SHADOW at 10.32.85.31 failed to send file(s) to <10.32.74.48:9427>: error reading from /scratch365/jgonza26/Project_HC/O2/VETVAS_manual.cif: (errno 2) No such file or directory; STARTER failed to receive file(s) from <10.32.85.31:9618>
+	Code 13 Subcode 2
+...
+000 (1801739.000.000) 09/15 21:16:18 Job submitted from host: <10.32.85.31:9618?addrs=10.32.85.31-9618&noUDP&sock=2107_ce23_3>
+...
+007 (1801739.000.000) 09/15 21:16:26 Shadow exception!
+	Error from slot1_2@d6cneh075.crc.nd.edu: SHADOW at 10.32.85.31 failed to send file(s) to <10.32.74.118:9176>: error reading from /scratch365/jgonza26/Project_HC/O2/VETVAS_manual.cif: (errno 2) No such file or directory; STARTER failed to receive file(s) from <10.32.85.31:9618>
+	0  -  Run Bytes Sent By Job
+	686  -  Run Bytes Received By Job
+...
+012 (1801739.000.000) 09/15 21:16:26 Job was held.
+	Error from slot1_2@d6cneh075.crc.nd.edu: SHADOW at 10.32.85.31 failed to send file(s) to <10.32.74.118:9176>: error reading from /scratch365/jgonza26/Project_HC/O2/VETVAS_manual.cif: (errno 2) No such file or directory; STARTER failed to receive file(s) from <10.32.85.31:9618>
+	Code 13 Subcode 2
+...
+000 (1802414.000.000) 09/15 21:46:30 Job submitted from host: <10.32.85.31:9618?addrs=10.32.85.31-9618&noUDP&sock=2107_ce23_3>
+...
+007 (1802414.000.000) 09/15 21:46:37 Shadow exception!
+	Error from slot1_2@d6cneh079.crc.nd.edu: SHADOW at 10.32.85.31 failed to send file(s) to <10.32.74.126:9620>: error reading from /scratch365/jgonza26/Project_HC/O2/VETVAS_manual.cif: (errno 2) No such file or directory; STARTER failed to receive file(s) from <10.32.85.31:9618>
+	0  -  Run Bytes Sent By Job
+	686  -  Run Bytes Received By Job
+...
+012 (1802414.000.000) 09/15 21:46:37 Job was held.
+	Error from slot1_2@d6cneh079.crc.nd.edu: SHADOW at 10.32.85.31 failed to send file(s) to <10.32.74.126:9620>: error reading from /scratch365/jgonza26/Project_HC/O2/VETVAS_manual.cif: (errno 2) No such file or directory; STARTER failed to receive file(s) from <10.32.85.31:9618>
+	Code 13 Subcode 2
+...
+009 (1802414.000.000) 12/17 10:39:15 Job was aborted by the user.
+	via condor_rm (by user condor)
+...
+009 (1781767.000.000) 12/17 10:40:06 Job was aborted by the user.
+	via condor_rm (by user condor)
+...
+009 (1801739.000.000) 12/17 10:40:33 Job was aborted by the user.
+	via condor_rm (by user condor)
+...
+009 (1793810.000.000) 12/17 10:41:26 Job was aborted by the user.
+	via condor_rm (by user condor)
+...

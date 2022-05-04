@@ -1,0 +1,24 @@
+SimulationType                MonteCarlo
+NumberOfCycles                10000
+NumberOfInitializationCycles  2000
+PrintEvery                    1000
+PrintPropertiesEvery          1000
+
+ChargeMethod                  Ewald
+CutOff                        12.0
+UseChargesFromCIFFile         yes
+Forcefield                    UFF
+EwaldPrecision                1e-6
+
+Framework 0
+FrameworkName Placeholder
+RemoveAtomNumberCodeFromLabel yes
+UnitCells 2 2 1
+ExternalTemperature 298.0
+
+Component 0 MoleculeName              O2
+            MoleculeDefinition        TraPPE
+            IdealGasRosenbluthWeight  1.0
+            WidomProbability          1.0
+            CreateNumberOfMolecules   0
+
