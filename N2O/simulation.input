@@ -1,0 +1,24 @@
+SimulationType                MonteCarlo
+NumberOfCycles                100000
+NumberOfInitializationCycles  20000
+PrintEvery                    10000
+PrintPropertiesEvery          10000
+
+ChargeMethod                  Ewald
+CutOff                        12.0
+UseChargesFromCIFFile         yes
+Forcefield                    UFF
+EwaldPrecision                1e-6
+
+Framework 0
+FrameworkName Placeholder
+RemoveAtomNumberCodeFromLabel yes
+UnitCells 1 1 1
+ExternalTemperature 298.0
+
+Component 0 MoleculeName              N2O
+            MoleculeDefinition        Hansen
+            IdealGasRosenbluthWeight  1.00006
+            WidomProbability          1.0
+            CreateNumberOfMolecules   0
+
