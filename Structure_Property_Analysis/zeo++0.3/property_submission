@@ -1,0 +1,67 @@
+#!/bin/bash
+#$ -q hpc@@colon
+#$ -N zeo++_calculations
+## calculate pore diameters, surface area, and accessible volume in zeo++
+
+# create mofs property file
+cd ../
+
+touch Selectivity_mof_properties.csv
+
+echo "MOF,LCD,PLD,Surface Area,Void Fraction,VF Error" >> Selectivity_mof_properties.csv
+
+cd zeo++-0.3/
+
+# loop through csv file of MOF names
+
+for ((i=1;i<=9122;i++))
+do
+
+
+# obtain mof name from h2oco2mofs.csv
+
+mof=$(awk 'FNR=='$i' {print $1}' mofs.csv)
+
+# copy mof.cif into zeo++
+cd ../../../
+
+
+cp MPN_CoRE_MOFs/MPNN_CoRE-ASR/${mof}.cif /scratch365/jgonza26/Project_HC/Structure_Property_Analysis/zeo++-0.3/
+
+
+cp MPN_CoRE_MOFs/MPNN_CoRE-ASR/${mof}.cif /scratch365/jgonza26/Project_HC/Structure_Property_Analysis/MOF_properties/
+
+cd Project_HC/Structure_Property_Analysis/zeo++-0.3/
+
+# if statement to check if that MOF already has results
+
+if [ ! -e "${mof}.res" ]
+then
+# run pore diameter calculation into mof.res file
+
+./network -ha -res ${mof}.res ${mof}.cif
+
+# run surface area calculation into mof.res file
+
+./network -ha -sa 1.2 1.2 2000 ${mof}.sa ${mof}.cif
+
+# Set up directory to run void fraction through RASPA
+
+cd ../MOF_properties
+
+mkdir ${mof}
+
+cp run simulation.input ${mof}/
+mv ${mof}.cif ${mof}/
+
+cd ${mof}/
+
+sed -i 's/Placeholder/'${mof}'/' simulation.input
+
+cd ../../zeo++-0.3/
+
+fi
+
+
+
+done
