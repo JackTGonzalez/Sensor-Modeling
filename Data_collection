@@ -1,0 +1,63 @@
+#!/bin/bash
+#$ -q hpc@@colon
+#$ -N Data_collection
+
+# program extracts henry constant data from each gas
+# and arranges it in Full_data.csv
+
+touch F_full_data.csv
+
+# make labels at top of page
+echo 'MOF, HC CH4, Error CH4, HC CO2, Error CO2, HC H2O, Error H2O, HC N2, Error N2, HC N2O, Error N2O, HC O2, Error O2' >> F_full_data.csv
+
+for ((i=1;i<=9123;i++))
+do
+
+# extract mof name and CH4 HC/error
+cd CH4
+
+mof=$(awk 'FNR=='$i' {print $1}' HC_data.csv)
+HCCH4=$(awk 'FNR=='$i' {print $2}' HC_data.csv)
+ECH4=$(awk 'FNR=='$i' {print $3}' HC_data.csv)
+
+
+# extract CO2 HC/error
+cd ../CO2
+
+HCCO2=$(awk 'FNR=='$i' {print $2}' HC_data.csv)
+ECO2=$(awk 'FNR=='$i' {print $3}' HC_data.csv)
+
+
+# extract H2O HC/error
+cd ../H2O
+
+HCH2O=$(awk 'FNR=='$i' {print $2}' HC_data.csv)
+EH2O=$(awk 'FNR=='$i' {print $3}' HC_data.csv)
+
+
+# extract N2 HC/error
+cd ../N2
+
+HCN2=$(awk 'FNR=='$i' {print $2}' HC_data.csv)
+EN2=$(awk 'FNR=='$i' {print $3}' HC_data.csv)
+
+
+# extract N2O HC/error
+cd ../N2O
+
+HCN2O=$(awk 'FNR=='$i' {print $2}' HC_data.csv)
+EN2O=$(awk 'FNR=='$i' {print $3}' HC_data.csv)
+
+
+# extract O2 HC/error
+cd ../O2
+
+HCO2=$(awk 'FNR=='$i' {print $2}' HC_data.csv)
+EO2=$(awk 'FNR=='$i' {print $3}' HC_data.csv)
+
+# print all values in Full_data.csv
+cd ..
+
+echo "${mof}, ${HCCH4}, ${ECH4}, ${HCCO2}, ${ECO2}, ${HCH2O}, ${EH2O}, ${HCN2}, ${EN2}, ${HCN2O}, ${EN2O}, ${HCO2}, ${EO2}" >> F_full_data.csv
+
+done
