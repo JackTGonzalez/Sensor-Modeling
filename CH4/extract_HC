@@ -1,0 +1,51 @@
+#!/bin/bash
+#$ -q hpc@@colon
+#$ -N Extract_HC_CH4
+
+# create .csv file for data
+touch HC_data.csv
+
+# print labels into file
+echo 'MOF, Henry Coefficient, Error' >> HC_data.csv
+
+for ((j=1;j<=9122;j++))
+do
+
+# Obtain MOF name
+mof=$(awk 'FNR=='$j' {print $1}' mofs.csv)
+#echo '${mof}'
+# change directory
+
+
+cd mofs/${mof}/
+
+# Check if Output directory exists (otherwise script will stop)
+if [ -d Output ]; then
+
+cd Output/System_0
+
+
+#extract Henry Coefficient and error
+
+HCoeff=$(grep 'Average Henry' out* | awk 'FNR==2 {print $5}')
+stddev=$(grep 'Average Henry' out* | awk 'FNR==2 {print $7}')
+
+# step back into main directory
+cd ../../../..
+
+else 
+# print that there is no henry coefficient
+
+HCoeff='Error'
+stddev=' no Henry Coefficient'
+
+# step back into main directory
+
+cd ../..
+fi
+
+echo "${mof} ${HCoeff} ${stddev} " >> HC_data.csv
+
+
+
+done
