@@ -1,0 +1,37 @@
+#!/bin/bash
+#$ -q hpc@@colon
+#$ -N zeo++_calculations
+
+# runs Void Fraction calculation in zeo++ for all mofs (8426)
+
+# step out of directory and touch vf.csv
+cd ../
+
+touch vf.csv
+
+echo "MOF,Void Fraction" >> vf.csv
+
+cd zeo++-0.3/
+
+
+for ((i=1;i<=9122;i++))
+do
+
+
+# obtain mof name from h2oco2mofs.csv
+
+mof=$(awk 'FNR=='$i' {print $1}' mofs.csv)
+
+
+./network -ha -vol 0.01 0.01 50000 ${mof}.vol ${mof}.cif
+
+VF=$(grep '@' ${mof}.vol | awk 'FNR==1 {print $10}')
+
+cd ../
+
+echo "${mof},${VF}" >> vf.csv
+
+cd zeo++-0.3/
+
+
+done
