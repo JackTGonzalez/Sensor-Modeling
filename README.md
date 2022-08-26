@@ -1,6 +1,6 @@
 # Sensor-Modeling
 
-Contains data and input files for Henry's Coefficient calculations with RASPA and structural properties with Zeo++.
+Contains data and input files for calculations of Henry's Coefficient with RASPA and structural properties with Zeo++.
 
 ### Content
 
